@@ -56,10 +56,19 @@ useEffect(() => {
 
 
         <header className="absolute top-0 left-0 w-full flex items-center px-6 py-4 bg-transparent">
-    <div className="text-2xl font-bold text-white">
-      MySite
-    </div>
+<div className="flex items-center gap-2 md:gap-3 lg:gap-4">
+  <img
+    src="earth.png"
+    alt="Logo"
+    className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"
+  />
 
+  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+    架空会社
+  </div>
+</div>
+
+  
     <nav className="hidden ml-auto md:flex space-x-9  bg-blue-600 px-20 py-4 rounded-full shadow ">
       <Link href="#" className="text-white text-3xl hover:text-gray-200">Home</Link>
       <Link href="#" className="text-white text-3xl hover:text-gray-200">About</Link>
