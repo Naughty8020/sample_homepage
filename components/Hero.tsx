@@ -30,9 +30,12 @@ useEffect(() => {
 
 
   return (
-<div className="relative w-full  h-[450px] md:h-[450px] lg:h-[900px] overflow-hidden
-             [clip-path:ellipse(100%_70%_at_50%_0%)]" //楕円形にしてます
->
+<div className="
+  relative w-full h-[300px] md:h-[450px] lg:h-[850px] overflow-hidden
+  [clip-path:ellipse(155%_90%_at_50%_0%)]         
+  md:[clip-path:ellipse(140%_85%_at_50%_0%)]     
+  lg:[clip-path:ellipse(120%_90%_at_50%_0%)]     
+">
 
 {images.map((image, index) => (
   <img
@@ -63,7 +66,7 @@ useEffect(() => {
     className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"
   />
 
-  <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+  <div className="font-shippori text-3xl md:text-4xl lg:text-5xl font-bold text-white">
     架空会社
   </div>
 </div>
