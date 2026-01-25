@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const images = [
 'unsplash/campaign-creators-e6n7uoEnYbA-unsplash.jpg',
@@ -58,21 +59,31 @@ useEffect(() => {
 
 
 
-        <header className="absolute top-0 left-0 w-full flex items-center px-6 py-4 bg-transparent">
-<div className="flex items-center gap-2 md:gap-3 lg:gap-4">
-  <img
-    src="earth.png"
-    alt="Logo"
-    className="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"
-  />
+        <header className="absolute top-0 left-0 w-full flex items-center pe-6 pt-0 mt-0 bg-transparent">
+        <div className="w-full h-4 lg:h-7 bg-white absolute top-0 left-0"></div>
 
-  <div className="font-shippori text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-    架空会社
+<div className="flex items-center bg-white ps-2 pe-7 pt-4 pb-2 lg:px-6 lg:py-7    rounded-br-4xl gap-2 md:gap-3 lg:gap-4">
+ <Image
+      src="/earth.png"  // Next.jsでは"/"から始まるパスを使用
+      alt="Logo"
+      width={70}  // デフォルトの幅（h-8と同じサイズ）
+      height={70}  // デフォルトの高さ（w-8と同じサイズ）
+      className="h-8 w-8 md:h-10 md:w-10 lg:h-30 lg:w-30"
+    />
+  <div className="font-shippori   text-3xl md:text-4xl lg:text-5xl font-bold text-black">
+    <Image
+      src="/icon2.png"
+      alt="Sample Company"
+      width={200}
+      height={50}
+      className="w-25 h-10 lg:w-110 lg:h-30 inline-block "
+
+    />
   </div>
 </div>
 
   
-    <nav className="hidden ml-auto md:flex space-x-9  bg-blue-600 px-20 py-4 rounded-full shadow ">
+    <nav className="hidden ml-auto md:flex space-x-9  bg-black px-20 py-4 mt-10 rounded-full shadow ">
       <Link href="/" className="text-white text-3xl hover:text-gray-200">Home</Link>
       <Link href="#" className="text-white text-3xl hover:text-gray-200">About</Link>
       <Link href="#" className="text-white text-3xl hover:text-gray-200">Services</Link>
