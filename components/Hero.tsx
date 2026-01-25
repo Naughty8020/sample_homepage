@@ -73,10 +73,10 @@ useEffect(() => {
 
   
     <nav className="hidden ml-auto md:flex space-x-9  bg-blue-600 px-20 py-4 rounded-full shadow ">
-      <Link href="#" className="text-white text-3xl hover:text-gray-200">Home</Link>
+      <Link href="/" className="text-white text-3xl hover:text-gray-200">Home</Link>
       <Link href="#" className="text-white text-3xl hover:text-gray-200">About</Link>
       <Link href="#" className="text-white text-3xl hover:text-gray-200">Services</Link>
-      <Link href="#" className="text-white text-3xl hover:text-gray-200">お問合わせ</Link>
+      <Link href="contact" className="text-white text-3xl hover:text-gray-200">お問合わせ</Link>
 
     </nav>
 
