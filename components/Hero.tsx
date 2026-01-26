@@ -4,96 +4,125 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 const images = [
-'unsplash/campaign-creators-e6n7uoEnYbA-unsplash.jpg',
-'unsplash/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg',
-'unsplash/k-mitch-hodge-Esi7nknKxmw-unsplash.jpg',
+  'unsplash/campaign-creators-e6n7uoEnYbA-unsplash.jpg',
+  'unsplash/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg',
+  'unsplash/k-mitch-hodge-Esi7nknKxmw-unsplash.jpg',
 ];
 
 export default function Hero(): JSX.Element {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
+  const [isOpen, setIsOpen] = useState(false);
 
-  
-useEffect(() => {
-  // intervalにはタイマーを識別する値が入る。その値を下でクリーンアップ
-  const interval = setInterval(() => {
-    setCurrentImageIndex((prevIndex) => {
-      console.log(`Image changed: ${prevIndex}`);
-      return (prevIndex + 1) % images.length;
-    });
-  }, 5000);
-  return () => clearInterval(interval); // アンマウント時にタイマーを解除
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  console.log(`isopen: ${isOpen}`);
+
+  useEffect(() => {
+    // intervalにはタイマーを識別する値が入る。その値を下でクリーンアップ
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => {
+        console.log(`Image changed: ${prevIndex}`);
+        return (prevIndex + 1) % images.length;
+      });
+    }, 5000);
+    return () => clearInterval(interval); // アンマウント時にタイマーを解除
   }, []);
 
 
   return (
-<div className="
-  relative w-full h-[400px] md:h-[450px] lg:h-[850px] overflow-hidden
-  [clip-path:ellipse(155%_90%_at_50%_0%)]         
-  md:[clip-path:ellipse(140%_85%_at_50%_0%)]     
-  lg:[clip-path:ellipse(120%_90%_at_50%_0%)]     
-">
+    <div className="
+      relative w-full h-[400px] md:h-[450px] lg:h-[850px] overflow-hidden
+      [clip-path:ellipse(155%_90%_at_50%_0%)]         
+      md:[clip-path:ellipse(140%_85%_at_50%_0%)]     
+      lg:[clip-path:ellipse(120%_90%_at_50%_0%)]     
+      ">
 
-{images.map((image, index) => (
-  <img
-    key={index}
-    src={image} // イメージ全部表示して
-    alt={`Hero Image ${index + 1}`}
-    className={`absolute inset-0 w-full h-full object-cover
-   transition-opacity duration-1000 ease-in-out
-        ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
-  />
-))}
-
-
-      
-
-      {/* <div */}
-      {/*   className="absolute bottom-0 w-full h-40 bg-white" */}
-      {/*   style={{ clipPath: "ellipse(50% 100% at 50% 100%)" }} */}
-      {/* ></div> */}
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image} // イメージ全部表示して
+          alt={`Hero Image ${index + 1}`}
+          className={`absolute inset-0 w-full h-full object-cover
+transition-opacity duration-1000 ease-in-out
+${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+        />
+      ))}
 
 
 
-        <header className="absolute top-0 left-0 w-full flex items-center pe-2 md:pe-6 pt-0 mt-0 bg-transparent">
+
+
+
+      <header className="absolute top-0 left-0 w-full flex items-center pe-2 md:pe-6 pt-0 mt-0 bg-transparent">
         <div className="w-full h-4 lg:h-7 bg-white absolute top-0 left-0"></div>
 
-<div className="flex items-center bg-white ps-2 pe-7 pt-4 pb-2 lg:px-6 lg:py-7    rounded-br-4xl gap-2 md:gap-3 lg:gap-4">
- <Image
-      src="/earth.png"  // Next.jsでは"/"から始まるパスを使用
-      alt="Logo"
-      width={70}  // デフォルトの幅（h-8と同じサイズ）
-      height={70}  // デフォルトの高さ（w-8と同じサイズ）
-      className="h-8 w-8 md:h-10 md:w-10 lg:h-30 lg:w-30"
-    />
-  <div className="font-shippori   text-3xl md:text-4xl lg:text-5xl font-bold text-black">
-    <Image
-      src="/icon2.png"
-      alt="Sample Company"
-      width={200}
-      height={50}
-      className="w-25 h-10 lg:w-110 lg:h-30 inline-block "
+        <div className="flex items-center bg-white ps-2 pe-7 pt-4 pb-2 lg:px-6 lg:py-7    rounded-br-4xl gap-2 md:gap-3 lg:gap-4">
+          <Image
+            src="/earth.png"  // Next.jsでは"/"から始まるパスを使用
+            alt="Logo"
+            width={70}  // デフォルトの幅（h-8と同じサイズ）
+            height={70}  // デフォルトの高さ（w-8と同じサイズ）
+            className="h-8 w-8 md:h-10 md:w-10 lg:h-30 lg:w-30"
+          />
+          <div className="font-shippori   text-3xl md:text-4xl lg:text-5xl font-bold text-black">
+            <Image
+              src="/icon2.png"
+              alt="Sample Company"
+              width={200}
+              height={50}
+              className="w-25 h-10 lg:w-110 lg:h-30 inline-block "
 
-    />
-  </div>
-</div>
+            />
+          </div>
+        </div>
 
-  
-    <nav className="hidden ml-auto md:flex space-x-9  bg-black px-20 py-4 mt-10 rounded-full shadow ">
-      <Link href="/" className="text-white text-3xl hover:text-gray-200">Home</Link>
-      <Link href="#" className="text-white text-3xl hover:text-gray-200">About</Link>
-      <Link href="#" className="text-white text-3xl hover:text-gray-200">Services</Link>
-      <Link href="contact" className="text-white text-3xl hover:text-gray-200">お問合わせ</Link>
 
-    </nav>
+        <nav className="hidden ml-auto md:flex space-x-9  bg-black px-20 py-4 mt-10 rounded-full shadow ">
+          <Link href="/" className="text-white text-3xl hover:text-gray-200">Home</Link>
+          <Link href="#" className="text-white text-3xl hover:text-gray-200">About</Link>
+          <Link href="#" className="text-white text-3xl hover:text-gray-200">Services</Link>
+          <Link href="contact" className="text-white text-3xl hover:text-gray-200">お問合わせ</Link>
 
-    <button className=" md:ml-10 mt-6 p-2   rounded-lg bg-black hover:bg-gray-200 transition md:hidden ml-auto">
-      <MenuIcon className="ml-auto  w-10 h-10 text-white "/>
+        </nav>
+
+        <button  className=" md:ml-10 mt-6 p-2 z-50  rounded-lg bg-black hover:bg-gray-200 transition md:hidden ml-auto"
+          onClick={toggleMenu}>
+          {isOpen ? (
+            <CloseIcon className="w-10 h-10 text-white" />
+          ) : (
+              <MenuIcon className="ml-auto  w-10 h-10 text-white "/>
+            )}
+
         </button>
 
- 
-  </header>
+
+
+        <nav
+          className={`${
+isOpen ? 'flex' : 'hidden'
+} flex-col absolute top-0 right-0 bg-black text-white w-full h-screen justify-center items-center space-y-6`}
+        >
+          <Link href="/" className="text-3xl hover:text-gray-400 transition">
+            Home
+          </Link>
+          <Link href="/about" className="text-3xl hover:text-gray-400 transition">
+            About
+          </Link>
+          <Link href="/services" className="text-3xl hover:text-gray-400 transition">
+            Services
+          </Link>
+          <Link href="/contact" className="text-3xl hover:text-gray-400 transition">
+            Contact
+          </Link>
+        </nav>
+
+
+      </header>
     </div>
-);}
+  );}
