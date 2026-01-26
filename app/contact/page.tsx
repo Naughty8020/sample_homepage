@@ -1,13 +1,14 @@
-import Hero from "../../components/Hero.tsx";
+import Header from '@/components/Header';
+
 
 
 const Contact = () => {
   return (
 
     <>
-      <Hero />
 
-    <section className=" py-16 lg:py-26">
+    <Header bgClass="bg-gray-700 " />
+          <section className=" py-16 lg:py-26">
       <div className="bg-gray-100  py-8 lg:py-16 px-20 mx-auto max-w-screen-md rounded-lg">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
           Contact Us

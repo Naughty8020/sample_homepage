@@ -1,3 +1,5 @@
+"use client";
+
 
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -5,7 +7,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
-export default function Header() {
+
+type HeaderProps = {
+  bgClass?: string; // 背景色クラスをオプションで受け取る
+};
+
+
+
+export default function Header ({bgClass="bg-transparent"}:HeaderProps): JSX.Element {
+
 
 
   const toggleMenu = () => {
@@ -17,10 +27,12 @@ const [isOpen, setIsOpen] = useState(false);
 
   return (
 
-      <header className="absolute top-0 left-0 w-full flex items-center pe-2 md:pe-6 pt-0 mt-0 bg-transparent">
-        <div className="w-full h-4 lg:h-7 bg-white absolute top-0 left-0"></div>
+      <header className={`absolute top-0 left-0 w-full flex items-center pe-2 md:pe-6 pt-0 mt-0 `}  >
+         <div className={`w-full h-[400px] ${bgClass} absolute top-0 z-0 left-0 z-0`}></div>
 
-        <div className="flex items-center bg-white ps-2 pe-7 pt-4 pb-2 lg:px-6 lg:py-7    rounded-br-4xl gap-2 md:gap-3 lg:gap-4">
+        <div className="w-full h-4 lg:h-7 bg-white  absolute top-0 left-0"></div>
+
+        <div className="flex items-center bg-white ps-2 pe-7 pt-4 pb-2 lg:px-6 lg:py-7    rounded-br-4xl gap-2 md:gap-3 lg:gap-4 z-50">
           <Image
             src="/earth.png"  // Next.jsでは"/"から始まるパスを使用
             alt="Logo"
@@ -28,7 +40,7 @@ const [isOpen, setIsOpen] = useState(false);
             height={70}  // デフォルトの高さ（w-8と同じサイズ）
             className="h-8 w-8 md:h-10 md:w-10 lg:h-30 lg:w-30"
           />
-          <div className="font-shippori   text-3xl md:text-4xl lg:text-5xl font-bold text-black">
+          <div className="font-shippori   text-3xl md:text-4xl lg:text-5xl font-bold text-black z-50">
             <Image
               src="/icon2.png"
               alt="Sample Company"
@@ -41,11 +53,11 @@ const [isOpen, setIsOpen] = useState(false);
         </div>
 
 
-        <nav className="hidden ml-auto md:flex space-x-9  bg-black px-20 py-4 mt-10 rounded-full shadow ">
+        <nav className="hidden ml-auto md:flex space-x-9  bg-black px-20 py-4 mt-10 rounded-full shadow  z-50">
           <Link href="/" className="text-white text-3xl hover:text-gray-200">Home</Link>
           <Link href="#" className="text-white text-3xl hover:text-gray-200">About</Link>
           <Link href="#" className="text-white text-3xl hover:text-gray-200">Services</Link>
-          <Link href="contact" className="text-white text-3xl hover:text-gray-200">お問合わせ</Link>
+          <Link href="/contact" className="text-white text-3xl hover:text-gray-200">お問合わせ</Link>
 
         </nav>
 
