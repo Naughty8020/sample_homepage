@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const images = [
 'unsplash/campaign-creators-e6n7uoEnYbA-unsplash.jpg',
@@ -24,7 +25,7 @@ useEffect(() => {
     });
   }, 5000);
   return () => clearInterval(interval); // アンマウント時にタイマーを解除
-}, []);
+  }, []);
 
 
   return (
@@ -56,7 +57,7 @@ useEffect(() => {
 
 
 
-        <header className="absolute top-0 left-0 w-full flex items-center pe-6 pt-0 mt-0 bg-transparent">
+        <header className="absolute top-0 left-0 w-full flex items-center pe-2 md:pe-6 pt-0 mt-0 bg-transparent">
         <div className="w-full h-4 lg:h-7 bg-white absolute top-0 left-0"></div>
 
 <div className="flex items-center bg-white ps-2 pe-7 pt-4 pb-2 lg:px-6 lg:py-7    rounded-br-4xl gap-2 md:gap-3 lg:gap-4">
@@ -88,11 +89,11 @@ useEffect(() => {
 
     </nav>
 
-    {/* <button className="ml-auto w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center shadow hover:bg-blue-700 transition"> */}
-    {/*   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> */}
-    {/*     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18M3 18h18" /> */}
-    {/*   </svg> */}
-    {/* </button> */}
+    <button className=" md:ml-10 mt-6 p-2   rounded-lg bg-black hover:bg-gray-200 transition md:hidden ml-auto">
+      <MenuIcon className="ml-auto  w-10 h-10 text-white "/>
+        </button>
+
+ 
   </header>
     </div>
 );}
