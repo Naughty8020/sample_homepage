@@ -8,6 +8,12 @@ const images = [
   '/unsplash/k-mitch-hodge-Esi7nknKxmw-unsplash.jpg',
 ];
 
+
+type Service = {
+  title: string;
+  description: string;
+};
+
 const services = [
   {
     title: "Webデザイン",

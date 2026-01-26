@@ -1,7 +1,7 @@
 
 
 
-export default function AboutSection() {
+export default function AboutSection():jsx.Element {
   return (
     <section className="py-15 px-10 ">
      <div className="max-w-7xl mx-auto lg:max-w-screen-2xl mx-auto text-center">

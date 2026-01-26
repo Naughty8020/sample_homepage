@@ -10,7 +10,7 @@ const images = [
 'unsplash/k-mitch-hodge-Esi7nknKxmw-unsplash.jpg',
 ];
 
-export default function Hero() {
+export default function Hero(): JSX.Element {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   
 
@@ -23,9 +23,6 @@ useEffect(() => {
       return (prevIndex + 1) % images.length;
     });
   }, 5000);
-
-          console.log(`Rendering image: ${images[currentImageIndex]}`)
-
   return () => clearInterval(interval); // アンマウント時にタイマーを解除
 }, []);
 
