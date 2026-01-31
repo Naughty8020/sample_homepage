@@ -19,14 +19,13 @@ export default function Hero(): JSX.Element {
 
 
   useEffect(() => {
-    // intervalにはタイマーを識別する値が入る。その値を下でクリーンアップ
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => {
         console.log(`Image changed: ${prevIndex}`);
         return (prevIndex + 1) % images.length;
       });
     }, 5000);
-    return () => clearInterval(interval); // アンマウント時にタイマーを解除
+    return () => clearInterval(interval);
   }, []);
 
 
@@ -51,7 +50,8 @@ ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
 
 
 
-<Header />
+      <Header />
 
     </div>
-  );}
+  );
+}

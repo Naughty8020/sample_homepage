@@ -1,15 +1,17 @@
 import Image from "next/image";
-import Hero from "../components/Hero.tsx";
-import AboutSection from "../components/AboutSection.tsx";
-import ServicesSection from "../components/ServicesSection.tsx";
-import Footer from "../components/Footer.tsx";
+import Hero from "../components/Hero";
+import AboutSection from "../components/AboutSection";
+import ServicesSection from "../components/ServicesSection";
+import Footer from "../components/Footer";
+import DetailSection from "../components/details/details";
 
-export default function Home(): JSX.Element {
+export default function Home() {
   return (
     <>
       <Hero />
-    <AboutSection /> 
-     <ServicesSection /> 
+      <AboutSection />
+      <ServicesSection />
+      <DetailSection />
       <Footer />
     </>
 
