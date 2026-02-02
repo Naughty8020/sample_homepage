@@ -1,4 +1,5 @@
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 
 
@@ -7,8 +8,8 @@ const Contact = () => {
 
     <>
 
-      <Header bgClass="bg-gray-200 " title="お問い合わせ" />
-      <section className=" mt-50 bg-white py-16 lg:py-26">
+      <Header bgClass="" title="" />
+      <section className=" mt-50 py-16 lg:py-26">
         <div className="bg-gray-400  py-8 lg:py-16 px-20 mx-auto max-w-3xl rounded-lg">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
             Contact Us
@@ -61,6 +62,7 @@ const Contact = () => {
           </form>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

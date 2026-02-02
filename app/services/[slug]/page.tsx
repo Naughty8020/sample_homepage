@@ -1,6 +1,7 @@
 import { SERVICES } from "@/constants/services";
 import { notFound } from "next/navigation";
-
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 // ビルド時に生成するパスを指定（SEO・爆速化）
 export async function generateStaticParams() {
   return SERVICES.map((service) => ({
@@ -15,9 +16,13 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   if (!service) notFound();
 
   return (
-    <main>
-      <h1>{service.title}</h1>
-      <p>{service.description}</p>
-    </main>
+    <>
+      <Header title="" />
+      <main>
+        <h1>{service.title}</h1>
+        <p>{service.description}</p>
+      </main>
+      <Footer />
+    </>
   );
 }

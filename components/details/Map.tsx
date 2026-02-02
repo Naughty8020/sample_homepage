@@ -6,7 +6,7 @@ export default function Map() {
        h-[450px] : height: 450px (カスタム値)
        mx-auto : 左右中央寄せ (margin-left/right: auto)
     */
-    <div className=" w-60%  md:w-1/2 h-[200px] md:mt-3 md:mt-10 mx-auto">
+    <div className=" w-60%  md:w-full h-[200px] md:h-[500px] md:mt-3 md:mt-10 mx-auto">
       <iframe
         title="google-map"
         src={mapSrc}

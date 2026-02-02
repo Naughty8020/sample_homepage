@@ -1,66 +1,87 @@
 import Map from '../details/Map';
-import Schedue from '../details/Schedule';
+import Schedule from '../details/Schedule';
 import Image from 'next/image';
+
 export default function Details() {
+  const companyInfo = [
+    { label: "会社名", value: "ファインディ株式会社 / Findy Inc." },
+    { label: "設立", value: "2014年2月" },
+    { label: "従業員数", value: "478名(2026年1月時点）" },
+    { label: "所在地", value: "〒141-0032 東京都品川区大崎1-2-2 アートヴィレッジ大崎セントラルタワー 5階" },
+    { label: "資本金", value: "19億9,692万円 ※資本金：1億円(2026年1月時点）" },
+    { label: "事業許可", value: "有料職業紹介事業許可書 13-ユ-308478" },
+    { label: "認証", value: "情報セキュリティ認証 ISMS ISO27001" },
+    { label: "アクセス", value: "JR山手線 大崎駅より徒歩5分" },
+  ];
+
   return (
-    /* 全体のコンテナ */
-    <div className=" min-h-screen">
-      <p className="text-center text-6xl md:text-9xl mt-1 md:mt-0 mb-23 md:mb-43">
+    <div className="min-h-screen ">
+      <p className="text-center text-6xl md:text-9xl md:mb-3 ">
         🚒
       </p>
 
-      {/* 1. 上に膨らんだ背景部分 */}
-      <div className="
-  relative w-full 
-  /* 高さの調整：スマホでは低め、PCでは高めに */
-  h-[800px] md:h-[900px] lg:h-[1400px] 
-  bg-sky-600
-  
-  /* clip-pathの調整：画面が小さいほど横の%を大きくして緩やかにする */
-  [clip-path:ellipse(150%_100%_at_50%_100%)]
-  md:[clip-path:ellipse(120%_100%_at_50%_100%)]
-  lg:[clip-path:ellipse(90%_100%_at_50%_100%)]
-  
-  /* mt: 前のセクションとの重なり。ネガティブマージンで食い込ませるのもアリ */
-  -mt-20 md:-mt-40
-  z-10
-">
-        {/* 2. コンテンツ部分（背景の上に配置） */}
-        <div className="relative z-20 flex flex-col items-center pt-10 md:pt-20">
+      {/* 曲線背景コンテナ */}
+      <div className="relative w-full h-auto min-h-[1500px] bg-sky-600 [clip-path:ellipse(150%_100%_at_50%_100%)] md:[clip-path:ellipse(120%_100%_at_50%_100%)] lg:[clip-path:ellipse(110%_100%_at_50%_100%)]    z-10 pb-32">
 
-          <div className="flex items-center justify-center  md:mt-10 ps-2 pe-7 pt-4 pb-2 lg:px-6 lg:py-7 gap-2 md:gap-3 lg:gap-4 z-50">
+        <div className="relative z-20 flex flex-col items-center pt-10 md:pt-20 px-4">
+
+          {/* ロゴ・ヘッダーエリア */}
+          <div className="flex items-center justify-center mb-20 mt-20 gap-3 lg:gap-7 z-50">
             <Image
-              src="/earth.png"  // Next.jsでは"/"から始まるパスを使用
+              src="/earth.png"
               alt="Logo"
-              width={70}  // デフォルトの幅（h-8と同じサイズ）
-              height={70}  // デフォルトの高さ（w-8と同じサイズ）
-              className="h-11 w-20   md:h-8 md:w-8 md:h-10 md:w-10 lg:h-30 lg:w-30"
+              width={60}
+              height={60}
+              className="h-10 w-10 lg:h-25 lg:w-25"
             />
-            <div className="font-shippori   text-3xl md:text-4xl lg:text-5xl font-bold text-black z-50">
-              <Image
-                src="/icon2.png"
-                alt="Sample Company"
-                width={200}
-                height={50}
-                className="w-35 h-20 lg:w-110 lg:h-30 inline-block "
+            <Image
+              src="/icon2.png"
+              alt="Sample Company"
+              width={180}
+              height={45}
+              className="w-32 h-auto lg:w-100"
+            />
+          </div>
 
-              />
+          {/* 全てを包むメインカード */}
+          <div className="w-full max-w-4xl bg-white rounded-[2rem] shadow-2xl overflow-hidden">
+
+            {/* 上部：会社概要 */}
+            <div className="p-8 md:p-12">
+              <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-10 flex items-center">
+                <span className="w-2 h-8 bg-sky-500 rounded-full mr-4"></span>
+                会社概要
+              </h2>
+
+              <dl className="divide-y divide-slate-100">
+                {companyInfo.map((item, index) => (
+                  <div key={index} className="flex flex-col md:flex-row py-5">
+                    <dt className="md:w-1/3 font-bold text-slate-500 text-sm md:text-base mb-1 md:mb-0">
+                      {item.label}
+                    </dt>
+                    <dd className="md:w-2/3 text-slate-800 leading-relaxed">
+                      {item.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
             </div>
+
+
+
+            {/* 下部：地図・アクセス */}
+            <div className="p-8 md:p-12">
+              <h3 className="text-xl font-bold text-slate-800 mb-6">アクセス</h3>
+              <Map />
+              <p className="mt-4 text-sm text-slate-500 text-center font-medium">
+                JR山手線 大崎駅より徒歩5分（アートヴィレッジ大崎セントラルタワー内）
+              </p>
+            </div>
+
           </div>
-          {/* 地図コンポーネント */}
-          <div className="w-full flex justify-center mt-10">
-            <Map />
-          </div>
+          {/* カード終了 */}
+
         </div>
-
-        <Schedue />
-
-
-
-
-
-
-
       </div>
     </div>
   );
