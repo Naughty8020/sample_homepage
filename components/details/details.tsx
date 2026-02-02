@@ -5,7 +5,7 @@ export default function Details() {
   return (
     /* 全体のコンテナ */
     <div className=" min-h-screen">
-      <p className="text-center text-9xl mt-1 md:mt-0 mb-23 md:mb-43">
+      <p className="text-center text-6xl md:text-9xl mt-1 md:mt-0 mb-23 md:mb-43">
         🚒
       </p>
 
