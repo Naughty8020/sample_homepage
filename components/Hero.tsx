@@ -11,7 +11,7 @@ const images = [
   'unsplash/k-mitch-hodge-Esi7nknKxmw-unsplash.jpg',
 ];
 
-export default function Hero(): JSX.Element {
+export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
 

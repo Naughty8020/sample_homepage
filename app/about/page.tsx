@@ -4,7 +4,7 @@ import Footer from '../../components/Footer';
 
 export default function About() {
   return (
-    <div className="bg-slate-50 pt-50 min-h-screen text-slate-800">
+    <div className=" pt-50 min-h-screen text-slate-800">
       <Header title="" />
 
       {/* メインコンテンツ */}
@@ -71,9 +71,9 @@ export default function About() {
           </div>
         </section>
 
-        <Footer />
 
       </main>
+      <Footer />
 
 
     </div>
