@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Details() {
   return (
     /* 全体のコンテナ */
-    <div className="bg-white min-h-screen">
+    <div className=" min-h-screen">
       <p className="text-center text-9xl mt-20">
         🚒
       </p>

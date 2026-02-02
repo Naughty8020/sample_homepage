@@ -5,7 +5,7 @@ import { Service, SERVICES } from '@/constants/services';
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto">
+    <section className="py-20  px-6 max-w-7xl mx-auto">
       <div className="border-b-4 border-gray-300 pb-2 mb-12">
         <h1 className="font-shippori text-2xl lg:text-4xl font-bold text-left">
           サービス内容

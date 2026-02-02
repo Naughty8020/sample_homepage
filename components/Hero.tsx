@@ -50,7 +50,6 @@ ${index === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
 
 
 
-      <Header />
 
     </div>
   );

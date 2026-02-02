@@ -27,14 +27,12 @@ export default function Header({ bgClass = "bg-transparent", title = "" }: Heade
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <header className={`fixed top-0 left-0 w-full flex items-center pe-2 md:pe-6 pt-0 mt-0 z-[100]`}>      <div className={`w-full h-[150] md:h-[400px] ${bgClass} absolute top-0 z-0 left-0 z-0`}>
 
-    <header className={`absolute top-0 left-0 w-full flex items-center pe-2 md:pe-6 pt-0 mt-0 `}  >
-      <div className={`w-full h-[150] md:h-[400px] ${bgClass} absolute top-0 z-0 left-0 z-0`}>
-
-        <h1 className="font-shippori text-black text-8xl z-50 text-left mt-60 p-5">
-          {title}
-        </h1>
-      </div>
+      <h1 className="font-shippori text-black text-8xl z-50 text-left mt-60 p-5">
+        {title}
+      </h1>
+    </div>
 
       <div className="w-full h-4 lg:h-7 bg-white  absolute top-0 left-0"></div>
 
