@@ -1,18 +1,24 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+import node module pakage 
+```bash
+npm i
+```
 
-First, run the development server:
+## run
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
-pnpm dev
-# or
 bun dev
 ```
+
+## development rules
+
+各ファイルの行数は88行以内
+UIとロジックのファイルは切り出す
+型を定義する
+
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
