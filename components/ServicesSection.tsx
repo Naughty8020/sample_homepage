@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { Service, SERVICES } from '@/constants/services';
+import Image from "next/image";
+import Link from "next/link";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { Service, SERVICES } from "@/constants/services";
 
 export default function ServicesSection() {
   return (
@@ -16,8 +16,9 @@ export default function ServicesSection() {
         {SERVICES.map((service: Service, index: number) => (
           <div
             key={service.slug}
-            className={`flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''
-              } items-center gap-10 lg:gap-20`}
+            className={`flex flex-col md:flex-row ${
+              index % 2 === 1 ? "md:flex-row-reverse" : ""
+            } items-center gap-10 lg:gap-20`}
           >
             {/* 画像セクション */}
             <div className="w-full md:w-1/2">
@@ -44,7 +45,7 @@ export default function ServicesSection() {
               <div className="mt-8 flex justify-end">
                 <Link
                   href={`/services/${service.slug}`}
-                  className="flex items-center gap-2 border-2 border-black py-2 px-6 hover:bg-black hover:text-white transition-all duration-300"
+                  className="flex items-center gap-2 border-2 border-black py-2 px-6 hover:bg-black hover:text-white transition-all duration-300 z-[550]"
                 >
                   <span className="font-bold">詳しく見る</span>
                   <ArrowForwardIosIcon sx={{ fontSize: 14 }} />
